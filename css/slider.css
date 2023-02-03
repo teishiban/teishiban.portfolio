@@ -1,0 +1,92 @@
+.slider {
+  /*横幅94%で左右に余白を持たせて中央寄せ*/
+  width: 1000px;
+
+  margin: 0 auto;
+  margin-top: 70px;
+}
+.skill_contents {
+  height: 200px;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.722);
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.skill_img {
+  width: 60px;
+  text-align: center;
+}
+.skill_intro {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+}
+.sp {
+  display: flex;
+  margin-top: 10px;
+}
+.skill_process {
+  width: 40px;
+}
+.process {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/*slickのJSで書かれるタグ内、スライド左右の余白調整*/
+
+.slider .slick-slide {
+  margin: 0 30px;
+}
+
+/*矢印の設定*/
+
+/*戻る、次へ矢印の位置*/
+.slick-prev,
+.slick-next {
+  position: absolute; /*絶対配置にする*/
+  top: 35%;
+  cursor: pointer; /*マウスカーソルを指マークに*/
+  outline: none; /*クリックをしたら出てくる枠線を消す*/
+  border-top: 5px solid rgb(183, 182, 179); /*矢印の色*/
+  border-right: 5px solid rgb(183, 182, 179); /*矢印の色*/
+  height: 30px;
+  width: 30px;
+}
+
+.slick-prev {
+  left: -5%;
+  transform: rotate(-135deg);
+}
+
+.slick-next {
+  right: -5%;
+  transform: rotate(45deg);
+}
+
+.slick-dots {
+  text-align: center;
+  margin: 30px 0 0 0;
+}
+
+.slick-dots li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.slick-dots button {
+  color: transparent;
+  outline: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: block;
+  border: none;
+  background: rgb(251, 250, 247);
+}
+
+.slick-dots .slick-active button {
+  background: rgb(176, 174, 176);
+}

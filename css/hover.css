@@ -1,0 +1,60 @@
+/* 背景が下から出現＋テキスト */
+
+.work_contents {
+  position: relative; /*テキストの基点となる位置を定義*/
+}
+
+.work_contents span.mask {
+  position: relative; /*背景色の基点となる位置を定義*/
+  display: block;
+  line-height: 0; /*行の高さを0にする*/
+  overflow: hidden; /*拡大してはみ出る要素を隠す*/
+}
+
+.work_contents span.mask::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  opacity: 0; /*透過0*/
+  transition: 0.3s ease-in-out; /*移り変わる速さを変更したい場合はこの数値を変更*/
+  transform: translateY(100%);
+  background: rgba(165, 144, 224, 0.598); /*背景色*/
+  width: 500px;
+  height: 100%;
+}
+
+.work_contents:hover span.mask::before {
+  /*hoverした時の変化*/
+  opacity: 1; /*透過なしに変化*/
+  transform: translateY(0);
+}
+
+.work_contents span.finish_time {
+  /*画像の上のテキスト*/
+  position: absolute;
+  opacity: 0; /*透過0*/
+  transition: 0.5s ease-in-out; /*移り変わる速さを変更したい場合はこの数値を変更*/
+  z-index: 3; /*テキストを前面に出す*/
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /*テキストの位置中央指定*/
+  color: #fff; /*テキストの色を変えたい場合はここを修正*/
+  line-height: 1.5; /*行の高さを1.5にする*/
+}
+
+.work_contents:hover span.finish_time {
+  /*hoverした時の変化*/
+  opacity: 1; /*透過なしに変化*/
+}
+
+/*========= レイアウトのためのCSS ===============*/
+
+a {
+  color: #333;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/*画像のレスポンシブ*/
