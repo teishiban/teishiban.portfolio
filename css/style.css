@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 body {
-  width: 1440px;
+  width: 100vw;
   overflow-x: hidden;
 }
 .mainvisual {
